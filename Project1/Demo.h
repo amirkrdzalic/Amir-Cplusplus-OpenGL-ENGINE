@@ -1,0 +1,41 @@
+#pragma once
+#include <Amir3DEngine\GameEngine.h>
+
+using namespace Amir3DEngine;
+
+
+class Demo
+{
+public:
+	Demo();
+	~Demo();
+
+	void run();
+	bool wireFrame = false;
+
+
+private:
+
+	void init();
+	void draw();
+	void update();
+
+	void setShaderProgram(ShaderNova & program) { m_program = program; }
+	void setViewPort(ViewPort & view) { m_viewPort = view; }
+
+	GameEngine m_engine;
+	ShaderNova m_program;
+	glm::vec4 colourData[6];
+	SHAPEGL m_cube;
+	SHAPEGL m_sphere;
+	Camera3D m_cam3D;
+	ViewPort m_viewPort;
+	int width, height;
+	SceneNode m_node1;
+	SceneNode m_node2;
+	SceneGraph m_sceneGraph;
+	float m_counter = 0.0f;
+	GLTexture m_texture;
+};
+
+
